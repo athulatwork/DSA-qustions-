@@ -1,19 +1,31 @@
     package com.dsa;
 
-public class Amstrong {
+    import java.util.Scanner;
+
+    public class Amstrong {
     public static void main(String[] args) {
-       int n= 153;
+       int n;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number");
+        n = sc.nextInt();
        int temp = n;
        int sum=0;
+       int digits =0 ;
 
-       int r;
 
-       while(n>0){
-           r = n%10;
-           n =n/10;
-           sum += r*r*r;
-
-       }if(sum == temp )
+       while(temp>0){
+           digits++;
+          temp /=10;
+       }
+       temp = n;
+       while (temp > 0 ){
+           int digit = temp %10;
+           sum += Math.pow (digit, digits);
+           temp /= 10;
+       }
+       System.out.println(digits);
+       if(sum == n )
        System.out.print("it is amstrong "+sum);
        else System.out.println("not amstrong");
     }
