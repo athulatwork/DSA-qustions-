@@ -6,6 +6,6 @@ git add .
 
 git commit -m "daily update $(date)"
 
-git push
+git push origin
 
 echo "✅ Code pushed to GitHub"
